@@ -4,7 +4,7 @@ An interactive mini-lab by **Remar Gonzaga Oclarit**, exploring the core princip
 This project transforms abstract concepts into hands-on, visual micro-projects, making state management approachable and fun.
 
 ### 🔗 Live Playground
-[Explore the Demo](https://managingstateweb.vercel.app/)
+[Explore the Demo](https://managingstateweb-nkrk.vercel.app/)
 
 ### 📌 What Is State Management?
 In web development, **state** is the dynamic data that defines how an app looks and behaves at any moment. Managing state effectively is key to building responsive and user-friendly interfaces. This project demonstrates how to handle state without relying on frameworks, using pure JavaScript.
