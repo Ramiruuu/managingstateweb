@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f9f5f2;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(90deg, #3b5bdb, #5e81ac);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    gap: 2rem;
+}
+
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #f4e7e2;
+}
+
+.greeting {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.activity-title {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    margin-top: 74px;
+}
+
+.activity-title h1 {
+    font-size: 2rem;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.main-content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+}
+
+.back-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border: 2px solid #ffffff; /* Border for emphasis */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #ffffff;
+    color: #1e3c72;
+    border-color: #1e3c72;
+}

@@ -3,69 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Lemar Gonzales</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>State Management in Web Applications</title>
+    <link rel="stylesheet" href="/sourcefiles/global.css">
     <link rel="stylesheet" href="/sourcefiles/index/index.css">
 </head>
 <body>
-
-    <header>
-        <div class="logo">
-            <a href="/index.html" style="text-decoration: none;"><span>John Lemar Gonzales</span></a>
-        </div>
+    <div class="header">
+        <h2>State Management</h2>
         <nav>
-            <a href="/src/activity1/activity1.html"><i class="fas fa-code"></i> Activity 1</a>
-            <a href="/src/activity2/activity2.html"><i class="fas fa-calculator"></i> Activity 2</a>
-            <a href="/src/activity3/activity3.html"><i class="fas fa-eye"></i> Activity 3</a>
-            <a href="/src/activity4/activity4.html"><i class="fas fa-user"></i> Activity 4</a>
+            <a href="/sourcefiles/act1/activity1.html">Activity 1</a>
+            <a href="/sourcefiles/act2/activity2.html">Activity 2</a>
+            <a href="/sourcefiles/act3/activity3.html">Activity 3</a>
+            <a href="/sourcefiles/act4/activity4.html">Activity 4</a>
         </nav>
-        <a href="https://github.com/CyberSphinxxx/StateManagementWebSys" class="contact-btn"><i class="fab fa-github"></i> Github Repository</a>
-    </header>
+    </div>
 
-    <section class="hero">
-        <h2>State Management in Web Applications</h2>
+    <div class="banner">
+        <h1>State Management in Web Applications</h1>
         <p>Topic: Understanding and Managing State in Web Applications (HTML, CSS, JavaScript)</p>
-        <p>Submitted By: John Lemar Gonzales BSIT2R5</p>
-    </section>
+    </div>
 
-    <section class="activities">
-        <a href="/src/activity1/activity1.html" class="activity-card">
-            <div class="activity-card-header">
-                <i class="fas fa-code icon"></i>
-                <h3>Activity 1: Local State Management with Input and Display</h3>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <h3>Activity 1: Local State with Input and Display</h3>
+                <span>▼</span>
             </div>
-            <p>Create a simple page with an input field and a paragraph. Use JavaScript to capture the input value and display a greeting like "Hello, Anna!" dynamically as the user types.</p>
-            <span class="btn"><i class="fas fa-arrow-right"></i> View Activity</span>
-        </a>
+            <div class="accordion-content">
+                <p>Create a simple page with an input field and a paragraph. Use JavaScript to capture the input value and display the greeting like "Hello, Anna!" dynamically as the user types.</p>
+            </div>
+        </div>
 
-        <a href="/src/activity2/activity2.html" class="activity-card">
-            <div class="activity-card-header">
-                <i class="fas fa-calculator icon"></i>
+        <div class="accordion-item">
+            <div class="accordion-header">
                 <h3>Activity 2: Counter App (Local State)</h3>
+                <span>▼</span>
             </div>
-            <p>Build a counter app with a heading showing the count and "+" and "−" buttons. Use JavaScript to increment or decrement the count, ensuring it doesn't go below 0, and update the DOM accordingly.</p>
-            <span class="btn"><i class="fas fa-arrow-right"></i> View Activity</span>
-        </a>
+            <div class="accordion-content">
+                <p>Build a counter app with a heading showing the count and "+" and "-" buttons. Use JavaScript to increment or decrement the count, ensuring it doesn't go below 0, and update the DOM accordingly.</p>
+            </div>
+        </div>
 
-        <a href="/src/activity3/activity3.html" class="activity-card">
-            <div class="activity-card-header">
-                <i class="fas fa-eye icon"></i>
+        <div class="accordion-item">
+            <div class="accordion-header">
                 <h3>Activity 3: Toggling a Section (Visibility State)</h3>
+                <span>▼</span>
             </div>
-            <p>Add a "Show/Hide Info" button and a div with text. Use JavaScript and CSS to toggle the div's visibility, demonstrating how visibility can be a form of UI state.</p>
-            <span class="btn"><i class="fas fa-arrow-right"></i> View Activity</span>
-        </a>
+            <div class="accordion-content">
+                <p>Add a "Show/Hide Info" button and a div with text. Use JavaScript and CSS to toggle the div's visibility, demonstrating how visibility can be a form of state in the UI.</p>
+            </div>
+        </div>
 
-        <a href="/src/activity4/activity4.html" class="activity-card">
-            <div class="activity-card-header">
-                <i class="fas fa-user icon"></i>
+        <div class="accordion-item">
+            <div class="accordion-header">
                 <h3>Activity 4: Global State Sharing (User Login Simulation)</h3>
+                <span>▼</span>
             </div>
-            <p>Create a login form and use a global appState object to store the username. On login, update a header greeting and a sidebar profile section to reflect the logged-in user, showcasing shared state across components.</p>
-            <span class="btn"><i class="fas fa-arrow-right"></i> View Activity</span>
-        </a>
-    </section>
+            <div class="accordion-content">
+                <p>Create a global state object to store the username. On login, update a heading, greeting, and a sidebar profile section to reflect the logged-in user, showing the shared state across components.</p>
+            </div>
+        </div>
+    </div>
 
-    <script src="/sourcefiles/index/index.js"></script>
+    <div class="footer">
+        <p>Created by Ramiruuu a.k.a Remar Gonzaga Oclarit</p>
+        <p>© 2025 State Management in Web Applications</p>
+        <p>All rights reserved.</p>
+    </div>
+
+    <script>
+        const headers = document.querySelectorAll('.accordion-header');
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('active');
+                header.querySelector('span').textContent = content.classList.contains('active') ? '▲' : '▼';
+            });
+        });
+    </script>
 </body>
 </html>

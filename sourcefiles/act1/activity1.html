@@ -3,60 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Activity 1: Local State Management with Input and Greeting Display">
     <title>Activity 1: Local State Management</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/sourcefiles/act1/activity1.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="/index.html" style="text-decoration: none;"><span>John Lemar Gonzales</span></a>
-        </div>
         <nav>
-            <a href="/src/activity1/activity1.html"><i class="fas fa-code"></i> Activity 1</a>
-            <a href="/src/activity2/activity2.html"><i class="fas fa-calculator"></i> Activity 2</a>
-            <a href="/src/activity3/activity3.html"><i class="fas fa-eye"></i> Activity 3</a>
-            <a href="/src/activity4/activity4.html"><i class="fas fa-user"></i> Activity 4</a>
+            <div class="nav-links">
+                <a href="/sourcefiles/act1/activity1.html" class="active">Activity 1</a>
+                <a href="/sourcefiles/act2/activity2.html">Activity 2</a>
+                <a href="/sourcefiles/act3/activity3.html">Activity 3</a>
+                <a href="/sourcefiles/act4/activity4.html">Activity 4</a>
+            </div>
+            <a href="/index.html" class="back-link">Back to Main Window</a>
         </nav>
-        <a href="https://github.com/CyberSphinxxx/StateManagementWebSys" class="contact-btn"><i class="fab fa-github"></i> Github Repository</a>
     </header>
 
-    <div class="activity-title">
-        <h1>Local State Management</h1>
-    </div>
+    <main>
+        <section class="activity-title">
+            <h1>Local State Management</h1>
+        </section>
 
-    <div class="main-content">
-        <div class="instructions">
-            <h2>Instructions</h2>
-            <ol>
-                <li>Create a simple HTML page with:
-                    <ul>
-                        <li>An input field (e.g., "Enter your name").</li>
-                        <li>A paragraph element to show the message.</li>
-                    </ul>
-                </li>
-                <li>Use JavaScript to:
-                    <ul>
-                        <li>Store the input value in a variable.</li>
-                        <li>Dynamically display a greeting below the input.</li>
-                    </ul>
-                </li>
-            </ol>
-            <div class="output">
-                <h2>Expected Output</h2>
-                <p>When a user types “Anna”, it should display: <strong>Hello, Anna!</strong></p>
+        <section class="main-content">
+            <div class="instructions">
+                <h2>Instructions</h2>
+                <ol>
+                    <li>Create a simple HTML page with:
+                        <ul>
+                            <li>An input field (e.g., "Enter your name").</li>
+                            <li>A paragraph element to show the message.</li>
+                        </ul>
+                    </li>
+                    <li>Use JavaScript to:
+                        <ul>
+                            <li>Store the input value in a variable.</li>
+                            <li>Dynamically display a greeting below the input.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <div class="output">
+                    <h2>Expected Output</h2>
+                    <p>When a user types “Anna”, it should display: <strong>Hello, Anna!</strong></p>
+                </div>
             </div>
-        </div>
 
-        <div class="container">
-            <h3>Output</h3>
-            <br>
-            <div class="input-group">
-                <input type="text" id="nameInput" placeholder="Enter your name" autocomplete="off">
+            <div class="container">
+                <h3>Interactive Output</h3>
+                <div class="input-group">
+                    <label for="nameInput" class="visually-hidden">Enter your name</label>
+                    <input type="text" id="nameInput" placeholder="Enter your name" autocomplete="off" aria-describedby="greeting">
+                    <span class="input-icon"><i class="fas fa-user"></i></span>
+                </div>
+                <p id="greeting" role="status"></p>
             </div>
-            <p id="greeting"></p>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <script>
         const nameInput = document.getElementById('nameInput');
@@ -67,10 +70,21 @@
             if (name) {
                 greeting.textContent = `Hello, ${name}!`;
                 greeting.classList.add('show');
+                greeting.setAttribute('aria-live', 'polite');
             } else {
-                greeting.textContent = '';
+                greeting.textContent = 'Please enter a name to see a greeting.';
                 greeting.classList.remove('show');
+                greeting.setAttribute('aria-live', 'off');
             }
+        });
+
+        // Add focus effect for accessibility
+        nameInput.addEventListener('focus', () => {
+            nameInput.parentElement.classList.add('focused');
+        });
+
+        nameInput.addEventListener('blur', () => {
+            nameInput.parentElement.classList.remove('focused');
         });
     </script>
 </body>

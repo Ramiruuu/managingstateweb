@@ -26,16 +26,21 @@ body::-webkit-scrollbar {
 }
 
 header {
-    background-color: #1a2533;
+    background: linear-gradient(90deg, #1e3c72, #2a5298); /* Enhanced gradient */
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #2a5298;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header:hover {
+    background: linear-gradient(90deg, #2a5298, #1e3c72); /* Subtle hover effect */
 }
 
 .logo {
@@ -58,23 +63,25 @@ header {
 
 nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 2rem;
 }
 
 nav a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    padding: 0.5rem 1rem; /* Added padding for better clickability */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-    color: #2a5298;
+    background-color: #ffffff; /* White background on hover */
+    color: #1e3c72; /* Dark blue text on hover */
 }
 
 .contact-btn {
@@ -165,7 +172,7 @@ nav a:hover {
 }
 
 .container {
-    background: #fff;
+    background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     padding: 2rem;
@@ -177,13 +184,6 @@ nav a:hover {
 
 .container:hover {
     transform: translateY(-5px);
-}
-
-.container h3 {
-    font-size: 1.5rem;
-    color: #1e3c72;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
 }
 
 .login-form {
@@ -238,6 +238,23 @@ button:hover {
 
 button:active {
     transform: scale(0.95);
+}
+
+.back-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border: 2px solid #ffffff; /* Border for emphasis */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #ffffff;
+    color: #1e3c72;
+    border-color: #1e3c72;
 }
 
 @media (max-width: 768px) {
